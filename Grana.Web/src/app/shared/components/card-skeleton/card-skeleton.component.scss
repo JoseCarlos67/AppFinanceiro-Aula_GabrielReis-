@@ -1,0 +1,73 @@
+@use '../../../../styles/variables' as *;
+
+.card-skeleton-container {
+    display: flex;
+    width: 100%;
+    box-shadow: $box-shadow-card;
+
+    .tag-color {
+        border-top-left-radius: 0.8rem;
+        border-bottom-left-radius: 0.8rem;
+        width: 3.2rem;
+        background-color: $neutral-secondary;
+
+        @each $name, $pair in $colors {
+            &.#{$name} {
+                background-color: nth($pair, 1);
+            }
+        }
+    }
+
+    .card-block {
+        border-top-right-radius: 0.8rem;
+        border-bottom-right-radius: 0.8rem;
+        background-color: $neutral-white;
+        flex: 1;
+
+        .skeleton-group {
+            display: flex;
+            align-items: center;
+            width: 100%;
+            gap: 1.6rem;
+        }
+
+        .skeleton-data {
+            width: 100%;
+            height: 0.8rem;
+            border-radius: 0.8rem;
+            background-color: $neutral-line;
+        }
+
+        .card-header {
+            padding: 0.8rem;
+            display: flex;
+            gap: 0.8rem;
+
+            .circle {
+                min-width: 2.4rem;
+                min-height: 2.4rem;
+                border-radius: 50%;
+                background-color: $neutral-line;
+            }
+        }
+
+        .divisor {
+            height: 0.1rem;
+            background-color: $neutral-line;
+            margin: 0 0.8rem;
+        }
+
+        .card-footer {
+            padding: 0.8rem;
+            display: flex;
+            align-items: center;
+            gap: 1.6rem;
+
+            .icon-skeleton {
+                user-select: none;
+                color: $neutral-ghost;
+                font-size: 1.5rem;
+            }
+        }
+    }
+}

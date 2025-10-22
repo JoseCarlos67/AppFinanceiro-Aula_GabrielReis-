@@ -1,0 +1,50 @@
+$primary: #24A19C;
+$primary-dark: #096C68;
+// $secondary: #ff9800;
+// $success: #4caf50;
+// $error: #f44336;
+// $warning: #ffeb3b;
+// $info: #2196f3;
+
+$neutral-primary: #1B1C1F;
+$neutral-secondary: #767E8C;
+$neutral-line: #E0E5ED;
+$neutral-ghost: #A9B0C5;
+$neutral-background: #F6F7F9;
+$neutral-white: #FFFFFF;
+
+$blue-primary: #218EFD;
+$blue-focused: #E9F4FF;
+
+$purple-primary: #8529E4;
+$purple-focused: #F3E9FF;
+
+$green-primary: #1C6B4A;
+$green-focused: #E9FFF2;
+
+$orange-primary: #FD8311;
+$orange-focused: #FEF0E2;
+
+$colors: (
+    blue: ($blue-primary, $blue-focused),
+    purple: ($purple-primary, $purple-focused),
+    green: ($green-primary, $green-focused),
+    orange: ($orange-primary, $orange-focused),
+);
+
+$font-family-base: 'Roboto', sans-serif;
+
+$font-size-smm: 1rem;
+$font-size-sm: 1.2rem;
+$font-size-base: 1.6rem;
+$font-size-lg: 2rem;
+
+$line-height-base: 1.5;
+
+$qtd-columns-grid: 12;
+$desktop-breakpoint: 1100px;
+$desktop-gap-grid: 1.6rem;
+$desktop-part-grid: calc(($desktop-breakpoint - $desktop-gap-grid * ($qtd-columns-grid - 1)) / $qtd-columns-grid);
+
+$box-shadow-button: 0px 8px 16px 0px rgba($primary, 0.28);
+$box-shadow-card: 0px 4px 40px 0px rgba(#0F163A, 0.08);

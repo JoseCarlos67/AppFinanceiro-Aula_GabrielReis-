@@ -1,0 +1,79 @@
+@use '../../../../styles/variables' as *;
+@use '../../../../styles/mixins' as *;
+
+.button-container {
+    .default {
+        width: 100%;
+        background-color: $primary;
+        color: $neutral-white;
+        padding: 1.6rem 0;
+        font-size: $font-size-base;
+        font-weight: 500;
+        border-radius: 1.6rem;
+        border: none;
+        cursor: pointer;
+        box-shadow: $box-shadow-button;
+
+        position: fixed;
+        bottom: 0.4rem;
+        left: 50%;
+        transform: translateX(-50%);
+        width: calc(100% - 3.2rem);
+        transition: all 0.2s ease-in-out;
+
+        &:hover {
+            background-color: $primary-dark;
+        }
+
+        &:disabled {
+            background-color: $neutral-secondary;
+            transition: all 0.2s ease-in-out;
+            cursor: not-allowed;
+            box-shadow: none;
+
+            &:hover {
+                background-color: $neutral-ghost;
+            }
+        }
+
+        @include respond-to(desktop) {
+            max-width: calc($desktop-part-grid * 8 + $desktop-gap-grid * 7);
+        }
+    }
+
+    .icon {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        background-color: $primary;
+        
+        padding: 1.6rem 0;
+        
+        border: none;
+        cursor: pointer;
+        box-shadow: $box-shadow-button;
+        user-select: none;
+
+        position: fixed;
+        bottom: 0.4rem;
+        right: 1.6rem;
+        height: 4.8rem;
+        width: 4.8rem;
+        border-radius: 50%;
+        transition: all 0.2s ease-in-out;
+        
+        &:hover {
+            background-color: $primary-dark;
+        }
+
+        span {
+            font-size: 3.6rem;
+            color: $neutral-white;
+        }
+
+        @include respond-to(desktop) {
+            right: calc((100% - ($desktop-part-grid * 8 + $desktop-gap-grid * 7)) / 2);
+        }
+    }
+}

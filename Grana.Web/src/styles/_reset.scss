@@ -1,0 +1,25 @@
+@use 'variables' as *;
+
+:root {
+    font-size: 62.5%;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    height: 100dvh;
+}
+
+body {
+    font-size: $font-size-base;
+    font-family: $font-family-base;
+    line-height: $line-height-base;
+    background-color: $neutral-background;
+    height: inherit;
+}

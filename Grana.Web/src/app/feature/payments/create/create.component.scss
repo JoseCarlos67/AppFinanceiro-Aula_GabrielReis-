@@ -1,0 +1,83 @@
+@use '../../../../styles/variables' as *;
+@use '../../../../styles/mixins' as *;
+
+.create-container {
+    width: 100%;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 3.2rem;
+
+    .title-group {
+        margin: 5.2rem 0;
+        display: flex;
+        align-items: center;
+        gap: 3.2rem;
+        
+        .icon-back {
+            user-select: none;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 0.5rem;
+            color: $neutral-primary;
+
+            &:hover {
+                background-color: $neutral-white;
+                border-radius: 50%;
+            }
+        }
+
+        .title {
+            font-size: $font-size-lg;
+            color: $neutral-primary;
+            font-weight: 500;
+            text-align: center;
+        }
+    }
+
+    form {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        gap: 2.4rem;
+
+        .label {
+            font-size: $font-size-base;
+            font-weight: 500;
+            color: $neutral-primary;
+        }
+
+        .category-block {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            gap: 0.8rem;
+
+            .tag-group {
+                display: flex;
+                flex-wrap: wrap;
+                gap: 0.8rem;
+            }
+        }
+
+        .payment-method-block {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            gap: 0.8rem;
+
+            .payment-method-group {
+                display: flex;
+                flex-direction: column;
+                gap: 0.8rem;
+            }
+        }
+    }
+
+    @include respond-to(desktop) {
+        max-width: calc($desktop-part-grid * 8 + $desktop-gap-grid * 7);
+    }
+}

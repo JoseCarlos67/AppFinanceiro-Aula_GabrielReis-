@@ -1,0 +1,12 @@
+<div class="list-container">
+    <div class="title-group">
+        <h1 class="title">Registrar novo pagamento</h1>
+        <p class="description">Clique no botão abaixo para criar:</p>
+    </div>
+    <div class="list-cards">
+       @for(color of colorsEmptyList; track color.id) {
+            <app-card-skeleton [color]="color.name"></app-card-skeleton>
+        }
+    </div>
+    <app-button icon="add" (click)="goToCreate()"></app-button>
+</div>

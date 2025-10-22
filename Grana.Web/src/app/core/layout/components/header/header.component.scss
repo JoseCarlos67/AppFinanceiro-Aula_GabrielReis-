@@ -1,0 +1,54 @@
+@use '../../../../../styles/variables' as *;
+@use '../../../../../styles/mixins' as *;
+
+header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    user-select: none;
+    position: sticky;
+    background-color: $neutral-background;
+    top: 0;
+
+    p {
+        color: $primary;
+        font-size: 3.6rem;
+        font-weight: 700;
+    }
+
+    .user-block {
+        display: flex;
+        align-items: center;
+        gap: 1.6rem;
+
+        .description {
+            display: none;
+            font-size: $font-size-base;
+            color: $neutral-primary;
+            font-weight: 500;
+        }
+    }
+
+    .icon-menu {
+        cursor: pointer;
+        font-size: 2.4rem;
+        padding: 0.5rem;
+        color: $neutral-primary;
+        transition: all 0.2s ease-in-out;
+
+        &:hover {
+            background-color: $neutral-white;
+            border-radius: 50%;
+        }
+    }
+
+    @include respond-to(desktop) {
+        .left {
+            display: none;
+        }
+
+        .user-block .description {
+            display: block;
+        }
+    }
+}
