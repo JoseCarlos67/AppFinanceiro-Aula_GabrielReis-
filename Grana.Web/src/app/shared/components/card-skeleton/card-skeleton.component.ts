@@ -1,5 +1,5 @@
 import { Component, Input } from '@angular/core';
-import { colorsEmptyList } from '../data/colors-empty-list.data';
+import { colorsEmptyList } from '../../data/colors-empty-list.data';
 
 @Component({
   selector: 'app-card-skeleton',

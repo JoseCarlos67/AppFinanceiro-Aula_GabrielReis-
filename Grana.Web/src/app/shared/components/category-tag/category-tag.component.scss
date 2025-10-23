@@ -1,0 +1,36 @@
+@use '../../../../styles/variables' as *;
+
+.category-item {
+    border-radius: 0.4rem;
+    font-size: $font-size-sm;
+    font-weight: 500;
+    padding: 0.2rem 0.4rem;
+    user-select: none;
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+
+    @each $name, $pair in $colors {
+        &.#{$name} {
+            $primary: nth($pair, 1);
+            $focused: nth($pair, 2);
+
+            color: $primary;
+            background-color: $focused;
+
+            &:hover {
+                color: $focused;
+                background-color: $primary;
+            }
+
+            &.selected {
+                color: $focused;
+                background-color: $primary;
+
+                &:hover {
+                    color: $primary;
+                    background-color: $focused;
+                }
+            }
+        }
+    }
+}

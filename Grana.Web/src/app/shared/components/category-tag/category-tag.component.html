@@ -1,0 +1,7 @@
+<div 
+    class="category-item" 
+    [class]="category.color + (selected ? ' selected' : '')"
+    (click)="onClick()"
+>
+    {{ category.name }}
+</div>

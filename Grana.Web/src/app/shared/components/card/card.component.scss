@@ -1,0 +1,108 @@
+@use '../../../../styles/variables' as *;
+
+.card-container {
+  display: flex;
+  width: 100%;
+  box-shadow: $box-shadow-card;
+
+  .tag-color {
+    border-top-left-radius: 0.8rem;
+    border-bottom-left-radius: 0.8rem;
+    width: 3.2rem;
+    background-color: $neutral-secondary;
+
+    @each $name, $pair in $colors {
+      &.#{$name} {
+        background-color: nth($pair, 1);
+      }
+    }
+  }
+
+  .card-block {
+    border-top-right-radius: 0.8rem;
+    border-bottom-right-radius: 0.8rem;
+    background-color: $neutral-white;
+    flex: 1;
+
+    .card-group {
+      padding: 0.8rem;
+      display: flex;
+      gap: 0.8rem;
+      align-items: center;
+      justify-content: space-between;
+
+      .group-left {
+        display: flex;
+        align-items: center;
+        gap: 0.8rem;
+
+        .icon {
+          user-select: none;
+          color: $neutral-ghost;
+          font-size: 1.5rem;
+        }
+      }
+
+      .circle {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        min-width: 1.6rem;
+        min-height: 1.6rem;
+        border-radius: 50%;
+        background-color: transparent;
+        border: 0.1rem solid $neutral-secondary;
+
+        @each $name, $pair in $colors {
+          &.#{$name} {
+            border: 0.1rem solid nth($pair, 1);
+          }
+        }
+
+        div {
+          min-width: 0.8rem;
+          min-height: 0.8rem;
+          border-radius: 50%;
+          background-color: $neutral-secondary;
+
+          @each $name, $pair in $colors {
+            &.#{$name} {
+              background-color: nth($pair, 1);
+            }
+          }
+        }
+      }
+    }
+
+    .divisor {
+      height: 0.1rem;
+      background-color: $neutral-line;
+      margin: 0 0.8rem;
+    }
+
+    .description {
+      font-size: $font-size-sm;
+      color: $neutral-primary;
+      font-weight: 500;
+    }
+
+    .payment-method {
+      font-size: $font-size-smm;
+      color: $neutral-primary;
+      font-weight: 400;
+    }
+
+    .value {
+      font-size: $font-size-smm;
+      color: $neutral-primary;
+      font-weight: 400;
+      white-space: nowrap;
+    }
+
+    .date {
+      font-size: $font-size-smm;
+      color: $neutral-secondary;
+      font-weight: 400;
+    }
+  }
+}

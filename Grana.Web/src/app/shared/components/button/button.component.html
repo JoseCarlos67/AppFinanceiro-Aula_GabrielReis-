@@ -1,5 +1,10 @@
 <div class="button-container">
-    <button type="button" class="icon" [disabled]="disabled">
-        <span class="material-symbols-outlined">{{ icon }}</span>
-    </button>
+    @if (variant === 'default') {
+        <button type="button" [class]="variant" [disabled]="disabled">{{ label }}</button>
+    }
+    @if (variant === 'icon') {
+        <button type="button" [class]="variant" [disabled]="disabled">
+            <span class="material-symbols-outlined">{{ icon }}</span>
+        </button>
+    }
 </div>

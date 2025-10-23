@@ -1,0 +1,22 @@
+<div class="card-container">
+  <div class="tag-color" [class]="category"></div>
+  <div class="card-block">
+    <div class="card-group">
+      <div class="group-left">
+        <div class="circle" [class]="category">
+          <div [class]="category"></div>
+        </div>
+        <span class="description">{{ paymentData.description }}</span>
+      </div>
+      <span class="value">{{ paymentData.value }}</span>
+    </div>
+    <div class="divisor"></div>
+    <div class="card-group">
+      <div class="group-left">
+        <span class="material-symbols-outlined icon">credit_card</span>
+        <span class="payment-method">{{ paymentMethod }}</span>
+      </div>
+      <span class="date">{{ paymentData.createdAt }}</span>
+    </div>
+  </div>
+</div>

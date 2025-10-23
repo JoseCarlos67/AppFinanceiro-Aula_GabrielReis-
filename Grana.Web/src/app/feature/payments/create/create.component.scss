@@ -44,35 +44,88 @@
         flex-direction: column;
         gap: 2.4rem;
 
-        .label {
-            font-size: $font-size-base;
-            font-weight: 500;
-            color: $neutral-primary;
-        }
-
-        .category-block {
+        .input-block {
             width: 100%;
             display: flex;
             flex-direction: column;
             gap: 0.8rem;
 
-            .tag-group {
+            .label {
+                font-size: $font-size-base;
+                font-weight: 500;
+                color: $neutral-primary;
+            }
+
+            input[type="text"],
+            input[type="number"] {
+                width: 100%;
+                border-radius: 0.6rem;
+                background-color: $neutral-background;
+                border: 0.1rem solid $neutral-line;
+                padding: 1.6rem;
+                color: $neutral-ghost;
+                overflow-wrap: break-word;
+                white-space: pre-wrap;
+            
+                &:focus {
+                    border: 0.1rem solid $neutral-ghost;
+                    outline: none;
+                }
+            }
+
+            .input-group {
                 display: flex;
                 flex-wrap: wrap;
                 gap: 0.8rem;
             }
-        }
 
-        .payment-method-block {
-            width: 100%;
-            display: flex;
-            flex-direction: column;
-            gap: 0.8rem;
+            .category-group {
+                flex-wrap: wrap;
+            }
 
             .payment-method-group {
-                display: flex;
                 flex-direction: column;
+            }
+
+            .input-radio-group {
+                display: flex;
+                align-items: center;
                 gap: 0.8rem;
+                cursor: pointer;
+
+                input {
+                    appearance: none;
+                    width: 1.6rem;
+                    height: 1.6rem;
+                    position: relative;
+                    cursor: pointer;
+
+                    &::after {
+                        content: '';
+                        width: 1.6rem;
+                        height: 1.6rem;
+                        border-radius: 50%;
+                        border: 0.1rem solid $neutral-ghost;
+                        background-color: transparent;
+                        position: absolute;
+                        transition: all 0.2s ease-in-out;
+                    }
+
+                    &:hover::after {
+                        border: 0.1rem solid $neutral-secondary;
+                    }
+
+                    &:checked::after {
+                        background-color: $primary;
+                        border: none;
+                    }
+                }
+
+                span {
+                    font-size: $font-size-sm;
+                    color: $neutral-primary;
+                    font-weight: 400;
+                }
             }
         }
     }

@@ -6,5 +6,54 @@
             </span>
             <h1 class="title">Adicionar pagamento</h1>
         </div>
+        <form [formGroup]="form">
+            <div class="input-block">
+                <span class="label">Categoria</span>
+                <div class="input-group category-group">
+                    @for (category of categories; track category.id) {
+                        <app-category-tag 
+                            [category]="category"
+                            [selected]="selectedCategory?.id === category.id"
+                            (categorySelect)="onSelectCategory($event)"
+                        ></app-category-tag>
+                    }
+                </div>
+            </div>
+            <div class="input-block">
+                <span class="label">Descrição</span>
+                <input 
+                    type="text" 
+                    placeholder="Avião comercial"
+                    formControlName="description"
+                >
+            </div>
+            <div class="input-block">
+                <span class="label">Valor</span>
+                <input 
+                    type="number"
+                    placeholder="12"
+                    formControlName="value"
+                >
+            </div>
+            <div class="input-block">
+                <span class="label">Forma de pagamento</span>
+                <div class="input-group payment-method-group">
+                    @for (paymentMethod of paymentMethods; track paymentMethod.id) {
+                        <label class="input-radio-group" [for]="paymentMethod.name + '-' + paymentMethod.id">
+                            <input
+                                type="radio"
+                                [id]="paymentMethod.name + '-' + paymentMethod.id" 
+                                name="paymentMethod" 
+                                [value]="paymentMethod.id"
+                                [checked]="isChecked()"
+                                (change)="onSelectPaymentMethod(paymentMethod.id)"
+                            >
+                            <span>{{ paymentMethod.name }}</span>
+                        </label>
+                    }
+                </div>
+            </div>
+        </form>
     </div>
+    <app-button label="Criar" [disabled]="form.invalid" (click)="onSubmit()"></app-button>
 </div>
